@@ -3,7 +3,16 @@ Este es el repositorio del proyecto final de Construccion de software.
 
 # Descripcion del proyecto
 
-Este proyecto es un CRUD el cual contiene una aplicacion de escritorio la cual genera un codigo QR para almacenar la informacion y luego mostrarla en una aplicacion **Android** en el celular. 
+Este proyecto el cual contiene una aplicacion de escritorio y una aplicacion para celulares Android.
+
+## Aplicacion de escritorio
+
+La aplicacion de escritorio contara con un CRUD para almacenar y encriptar la data en un  codigo QR. 
+
+## Aplicacion Android
+
+La aplicacion android contara con un descencriptador y un organizador de la informacion, de manera que todos los datos se puedan mostrar de manera correcta. 
+
 
 # Integrantes
 

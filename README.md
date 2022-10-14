@@ -16,9 +16,9 @@ La aplicacion android contara con un descencriptador y un organizador de la info
 
 # Integrantes
 
-- Diego Lobato ID: 1100999
-- Kelvin Marte ID: 1100945
-- Alejandro Wu ID: 1095504
-- Marcos Yepez ID: 1090192
+- Diego Lobato - ID: 1100999
+- Kelvin Marte - ID: 1100945
+- Alejandro Wu - ID: 1095504
+- Marcos Yepez - ID: 1090192
 
 

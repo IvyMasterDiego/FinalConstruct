@@ -20,15 +20,43 @@ namespace FinalProjectConstruct
 {
     public partial class MainForm : Form
     {
+        #region Variables
         string txtecnrypt;
         PersonInformation person = new PersonInformation();
+        #endregion
 
+        #region Constructor
         public MainForm()
         {
             InitializeComponent();
             dgvPerson.DataSource = person.GetPersons();
         }
+        #endregion
 
+        #region Metodos 
+        private string EncryptText()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(txtCedula.Text + "||");
+            sb.Append(txtNombre.Text + "||");
+            sb.Append(txtApellido.Text + "||");
+            sb.Append(txtCelular.Text + "||");
+            sb.Append(txtDireccion.Text + "||");
+
+            return sb.ToString().Encrypttext() + "###";
+        }
+        private void ClearControls()
+        {
+            txtId.Text = String.Empty;
+            txtCedula.Text = String.Empty;
+            txtNombre.Text = String.Empty;
+            txtApellido.Text = String.Empty;
+            txtCelular.Text = String.Empty;
+            txtDireccion.Text = String.Empty;
+        }
+        #endregion
+
+        #region Eventos
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -61,21 +89,9 @@ namespace FinalProjectConstruct
             }
         }
 
-        private string EncryptText()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(txtCedula.Text + "||");
-            sb.Append(txtNombre.Text + "||");
-            sb.Append(txtApellido.Text + "||");
-            sb.Append(txtCelular.Text + "||");
-            sb.Append(txtDireccion.Text + "||");
-
-            return sb.ToString().Encrypttext() + "###";
-        }
-
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            person.Id = int.Parse(txtId.Text);
             person.Cedula = txtCedula.Text;
             person.Nombre = txtNombre.Text;
             person.Apellido = txtApellido.Text;
@@ -94,7 +110,6 @@ namespace FinalProjectConstruct
                 MessageBox.Show("Ocurrio un error. Intente otra vez");
             }
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             person.Id = int.Parse(txtId.Text);
@@ -116,10 +131,9 @@ namespace FinalProjectConstruct
                 MessageBox.Show("Ocurrio un error. Intente otra vez");
             }
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            person.Cedula = txtCedula.Text;
+            person.Id = int.Parse(txtId.Text);
             var success = person.DeletePerson(person);
             dgvPerson.DataSource = person.GetPersons();
             if (success)
@@ -132,20 +146,9 @@ namespace FinalProjectConstruct
                 MessageBox.Show("Ocurrio un error. Intente otra vez");
             }
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearControls();
-        }
-
-        private void ClearControls()
-        {
-            txtId.Text = String.Empty;
-            txtCedula.Text = String.Empty;
-            txtNombre.Text = String.Empty;
-            txtApellido.Text = String.Empty;
-            txtCelular.Text = String.Empty;
-            txtDireccion.Text = String.Empty;
         }
 
         private void dgvPerson_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -158,5 +161,7 @@ namespace FinalProjectConstruct
             txtCelular.Text = dgvPerson.Rows[index].Cells[4].Value.ToString();
             txtDireccion.Text = dgvPerson.Rows[index].Cells[5].Value.ToString();
         }
+
+        #endregion
     }
 }

@@ -17,6 +17,11 @@ namespace FinalProjectConstruct
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Este es el evento para poder inicar sesion en la aplicacion. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtUser.Text) && string.IsNullOrEmpty(txtPassword.Text))
@@ -32,11 +37,21 @@ namespace FinalProjectConstruct
             }
         }
 
+        /// <summary>
+        /// Este es el evento para poder cerrar la aplicacion. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Este es el evento para que cuando se presione la tecla "Enter" se pueda ingresar en la aplicacion. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)

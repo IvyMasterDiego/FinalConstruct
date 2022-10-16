@@ -19,11 +19,16 @@ namespace FinalProjectConstruct.Class.Model
         public string Celular { get; set; }
         public string Direccion { get; set; }
 
+   
         private const string selectQuery = "SELECT * FROM Person";
-        private const string deleteQuery = "DELETE FROM Persona WHERE Cedula=@Cedula";
+        private const string deleteQuery = "DELETE FROM Person WHERE id=@id";
         private const string updateQuery = "UPDATE Person SET id=@Id, Cedula=@Cedula, Nombre=@Nombre, Apellido=@Apellido, Celular=@Celular, Direccion=@Direccion";
         private const string insertQuery = "INSERT INTO Person( id, Cedula, Nombre, Apellido, Celular, Direccion) VALUES ( @id, @Cedula, @Nombre, @Apellido, @Celular, @Direccion)";
-       
+
+        /// <summary>
+        /// Este es el metodo para poder insertar los datos en la base de datos.
+        /// <param name="person" > Se requiere que se le pase el parametro de la clase PersonInformation.</param>
+        /// </summary>
         public bool InsertPerson(PersonInformation person)
         {
             int rows;
@@ -44,6 +49,10 @@ namespace FinalProjectConstruct.Class.Model
             return (rows > 0) ? true : false;
         }
 
+        /// <summary>
+        /// Este es el metodo para poder actualizar de la tabla en la base de datos.
+        /// <param name="person" > Se requiere que se le pase el parametro de la clase PersonInformation.</param>
+        /// </summary>
         public bool UpdatePerson(PersonInformation person)
         {
             int rows;
@@ -64,6 +73,10 @@ namespace FinalProjectConstruct.Class.Model
             return (rows > 0) ? true : false;
         }
 
+        /// <summary>
+        /// Este es el metodo para poder eleminar una fila de la tabla datos en la base de datos.
+        /// <param name="person" > Se requiere que se le pase el parametro de la clase PersonInformation.</param>
+        /// </summary>
         public bool DeletePerson(PersonInformation person)
         {
             int rows;
@@ -72,13 +85,17 @@ namespace FinalProjectConstruct.Class.Model
                 con.Open();
                 using (SqlCommand com = new SqlCommand(deleteQuery, con))
                 {
-                    com.Parameters.AddWithValue("@Cedula", person.Id);
+                    com.Parameters.AddWithValue("@id", person.Id);
                     rows = com.ExecuteNonQuery();
                 }
             }
             return (rows > 0) ? true : false;
         }
 
+        /// <summary>
+        /// Este es el metodo para poder traer los datos en la base de datos.
+        /// <param name="person" > Se requiere que se le pase el parametro de la clase PersonInformation.</param>
+        /// </summary>
         public DataTable GetPersons()
         {
             var datatable = new DataTable();

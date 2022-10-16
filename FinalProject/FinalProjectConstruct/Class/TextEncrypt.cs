@@ -10,6 +10,11 @@ namespace FinalProjectConstruct
         public static byte[] IV { get; set; }
         public static byte[] Key { get; set; }
 
+        /// <summary>
+        /// Este metodo es el que se encarga de encriptar la informacion recibida. 
+        /// </summary>
+        /// <param name="str"> Se requiere que se le pase la data que se va a encriptar</param>
+        /// <returns>string encriptado </returns>
         public static string Encrypttext(this string str)
         {
             try

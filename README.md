@@ -1,15 +1,15 @@
 # FinalConstruct
 Este es el repositorio del proyecto final de Construccion de software. 
 
-# Descripcion del proyecto
+## Descripcion del proyecto
 
 Este proyecto el cual contiene una aplicacion de escritorio y una aplicacion para celulares Android.
 
-## Aplicacion de escritorio
+### Aplicacion de escritorio
 
 La aplicacion de escritorio contara con un CRUD para almacenar y encriptar la data en un  codigo QR. 
 
-## Aplicacion Android
+### Aplicacion Android
 
 La aplicacion android contara con un descencriptador y un organizador de la informacion, de manera que todos los datos se puedan mostrar de manera correcta. 
 

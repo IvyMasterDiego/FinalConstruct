@@ -5,12 +5,12 @@ USE FinalProject
 GO
 CREATE TABLE Person
 (
-	id int not null,
-	Cedula varchar(50) not null,
-	Nombre varchar(50) not null,
-	Apellido varchar(50) not null,
-	Celular varchar(50) not null,
-	Direccion varchar(200)not null,
+	id INT NOT NULL,
+	Cedula VARCHAR(50) NOT NULL,
+	Nombre VARCHAR(50) NOT NULL,
+	Apellido VARCHAR(50) NOT NULL,
+	Celular VARCHAR(50) NOT NULL,
+	Direccion VARCHAR(200) NOT NULL,
 )
 GO
 SELECT * FROM Person
